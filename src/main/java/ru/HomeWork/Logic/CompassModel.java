@@ -50,19 +50,22 @@ public class CompassModel {
     }
 
     public HashMap<String,String> getSide(Integer dot){
-        try {
-            HashMap<String,String> response = new HashMap<String, String>();
-            for (Map.Entry<String, String> entry : compass.entrySet()){
-                Integer dig1 = Integer.parseInt(entry.getValue().split("-")[0]);
-                Integer dig2 = Integer.parseInt(entry.getValue().split("-")[1]);
-                if (dot>=dig1 && dot <= dig2)
-                    response.put("Side",entry.getKey());
+        if (dot>0 && dot <= 365)
+            try {
+                HashMap<String,String> response = new HashMap<String, String>();
+                for (Map.Entry<String, String> entry : compass.entrySet()){
+                    Integer dig1 = Integer.parseInt(entry.getValue().split("-")[0]);
+                    Integer dig2 = Integer.parseInt(entry.getValue().split("-")[1]);
+                    if (dot>=dig1 && dot <= dig2)
+                        response.put("Side",entry.getKey());
+                }
+                return response;
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+                return null;
             }
-            return response;
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+        else
             return null;
-        }
 
     }
 }
