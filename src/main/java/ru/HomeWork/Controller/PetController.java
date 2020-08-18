@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 */
 
 @RestController
-public class Controller {
+public class PetController {
     private static final PetModel petModel = PetModel.getInstance();
     private static AtomicInteger newId = new AtomicInteger(1);
 
@@ -57,7 +57,7 @@ public class Controller {
         return petModel.getFromList(id.get("id"));
     }
 
-    @DeleteMapping(value = "/deletePet",consumes = "application/json",produces = "text/htmln")
+    @DeleteMapping(value = "/deletePet",consumes = "application/json",produces = "text/html")
     public String deletePet(@RequestBody Map<String, Integer> id){
         if (petModel.deletPet(id.get("id")))
             if (id.get("id")==0)
@@ -76,7 +76,7 @@ public class Controller {
                     "</html>";
     }
 
-    @PutMapping(value = "/editPet",consumes = "application/json",produces = "text/htmln")
+    @PutMapping(value = "/editPet",consumes = "application/json",produces = "text/html")
     public String editPet(@RequestBody Map<String,String> pet){
         Integer id = Integer.parseInt(pet.get("id"));
         String name = pet.get("name");

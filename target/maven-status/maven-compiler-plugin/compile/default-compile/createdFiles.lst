@@ -1,6 +1,14 @@
-ru\HomeWork\Controller\Controller.class
+ru\HomeWork\Logic\ClientRequest$ClientInfo.class
+ru\HomeWork\Logic\ClientResponse$Payment.class
+ru\HomeWork\Logic\ClientRequest.class
+ru\HomeWork\Logic\ClientRequest$Identification.class
+ru\HomeWork\App.class
+ru\HomeWork\Controller\PetController.class
+ru\HomeWork\Logic\CompassModel.class
+ru\HomeWork\Logic\ClientResponse.class
 ru\HomeWork\Controller\CompassController.class
 ru\HomeWork\Logic\Pet.class
-ru\HomeWork\App.class
-ru\HomeWork\Logic\CompassModel.class
+ru\HomeWork\Controller\ClientController.class
+ru\HomeWork\Logic\ClientResponse$DateParam.class
+ru\HomeWork\Logic\ClientModel.class
 ru\HomeWork\Logic\PetModel.class

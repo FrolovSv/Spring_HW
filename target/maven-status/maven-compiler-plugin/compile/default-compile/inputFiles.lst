@@ -1,6 +1,10 @@
 D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\Pet.java
-D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Controller\Controller.java
+D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Controller\PetController.java
 D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\CompassModel.java
 D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\PetModel.java
+D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Controller\ClientController.java
+D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\ClientRequest.java
 D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Controller\CompassController.java
+D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\ClientResponse.java
 D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\App.java
+D:\JavaProgect\Spring_HW\src\main\java\ru\HomeWork\Logic\ClientModel.java
