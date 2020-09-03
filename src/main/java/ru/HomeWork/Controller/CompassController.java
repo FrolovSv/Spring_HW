@@ -34,8 +34,10 @@ import java.util.Map;
 public class CompassController {
     private static final CompassModel compassModel = CompassModel.getInstance();
 
+    //обрабатывем PUT запрос
     @PutMapping(value = "/setCompass",consumes = "application/json",produces = "text/html")
     public String setCompass(@RequestBody Map<String,String> compass){
+        //Проверяем полученное значение из вызова метода на добавелние диапазонов в компас и запроса клиента
         if(compassModel.addAllParam(compass))
             return "<html>" +
                     "<h3>Поздравляю, вы успешно добавили диапазоны градусов для компаса</h3>" +
@@ -46,8 +48,10 @@ public class CompassController {
                     "</html>";
     }
 
+    //Обрабатываем запрос GET
     @GetMapping(value = "/getSideCompass",consumes = "application/json",produces = "application/json")
     public Map<String,String> getSideCompass(@RequestBody Map<String,Integer> dot){
+        //Обрабатывем запрос клиента и выдаем ответ
         return compassModel.getSide(dot.get("Degree"));
     }
 }

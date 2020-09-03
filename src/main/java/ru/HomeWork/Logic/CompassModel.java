@@ -20,7 +20,9 @@ public class CompassModel {
     public static CompassModel getInstance() {
         return instance;
     }
+
     public CompassModel() {
+        //инициализируем МАП и добавлеяем в него значения сторон
         compass = new HashMap<String, String>();
         compass.put(North,"");
         compass.put(NorthEast,"");
@@ -32,8 +34,10 @@ public class CompassModel {
         compass.put(NorthWest,"");
     }
 
+    //метод установки диапазонов значений в МАПу
     public boolean addAllParam(Map<String,String> param){
         try {
+            //Заполняем занчения в МАП полученными из запроса клиента
             compass.put(North,param.get("North"));
             compass.put(NorthEast,param.get("NorthEast"));
             compass.put(East,param.get("East"));
@@ -49,13 +53,18 @@ public class CompassModel {
         }
     }
 
+    //Метод получения стороны света по координате
     public HashMap<String,String> getSide(Integer dot){
-        if (dot>0 && dot <= 365)
+        //проверяем параметр на вхождение в диапазон
+        if (dot>=0 && dot <= 360)
             try {
                 HashMap<String,String> response = new HashMap<String, String>();
+                //проходим по всем данным в МАПе
                 for (Map.Entry<String, String> entry : compass.entrySet()){
+                    //разбиваем строку на 2а числа от и до
                     Integer dig1 = Integer.parseInt(entry.getValue().split("-")[0]);
                     Integer dig2 = Integer.parseInt(entry.getValue().split("-")[1]);
+                    //если искомая dot находтися внутри диапазона, то мы нашли верный и выдаем ответ
                     if (dot>=dig1 && dot <= dig2)
                         response.put("Side",entry.getKey());
                 }

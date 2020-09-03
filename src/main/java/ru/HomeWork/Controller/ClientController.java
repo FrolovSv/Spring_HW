@@ -25,7 +25,4 @@ public class ClientController {
         clientResponse.getResponse(clientRequest);
         return clientResponse;
     }
-
-
-
 }
